@@ -4,6 +4,7 @@ const toCurrency = document.querySelector('#to');
 const price = document.querySelector('#price');
 const change = document.querySelector('#change');
 const timeParagraph = document.querySelector('#time');
+const marketsTableBody = document.querySelector('#markets');
 
 async function getRates() {
     try {
@@ -26,6 +27,17 @@ function updateUI(ticker, time) {
     toCurrency.innerText = ticker.target;
     price.innerText = '$' + parseFloat(ticker.price).toFixed(2);
     change.innerText = '$' + parseFloat(ticker.change).toFixed(2);
+
+    for (item of ticker.markets) {
+        const tableRow = document.createElement('tr');
+        const marketNameTableCell = document.createElement('td');
+        const marketPriceTableCell = document.createElement('td');
+        marketNameTableCell.innerText = item.market;
+        marketPriceTableCell.innerText = '$' + parseFloat(item.price).toFixed(2);
+        tableRow.appendChild(marketNameTableCell);
+        tableRow.appendChild(marketPriceTableCell);
+        marketsTableBody.appendChild(tableRow);
+    }
 
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     const date = new Date(time * 1000);
