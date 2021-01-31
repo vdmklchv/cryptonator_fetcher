@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <h1>Bitcoin - USD rates</h1>
+    <table>
+        <thead>
+            <th>From:</th>
+            <th>To:</th>
+            <th>Price:</th>
+            <th>Change:</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="from"></td>
+                <td id="to"></td>
+                <td id="price"></td>
+                <td id="change"></td>
+            </tr>
+
+        </tbody>
+    </table>
+    <p id="time"></p>
+    <button id="refresh">Refresh rates</button>
+    <script src="app.js"></script>
+</body>
+
+</html>
