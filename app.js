@@ -27,6 +27,7 @@ function updateUI(ticker, time) {
     toCurrency.innerText = ticker.target;
     price.innerText = '$' + parseFloat(ticker.price).toFixed(2);
     change.innerText = '$' + parseFloat(ticker.change).toFixed(2);
+    marketsTableBody.innerHTML = '';
 
     for (item of ticker.markets) {
         const tableRow = document.createElement('tr');
